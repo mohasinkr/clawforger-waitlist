@@ -85,21 +85,21 @@ export default function Home() {
     });
 
     toast.promise(promise, {
-      loading: "Getting you on the waitlist... 🚀",
+      loading: "Processing your request... 🚀",
       success: (data) => {
         setName("");
         setEmail("");
-        return "Thank you for joining the waitlist 🎉";
+        return "You're on the list! We'll be in touch soon.";
       },
       error: (error) => {
         if (error === "Rate limited") {
-          return "You're doing that too much. Please try again later";
+          return "Too many requests. Please try again later.";
         } else if (error === "Email sending failed") {
-          return "Failed to send email. Please try again 😢.";
+          return "Failed to send confirmation. Please try again.";
         } else if (error === "Notion insertion failed") {
-          return "Failed to save your details. Please try again 😢.";
+          return "Failed to save your details. Please try again.";
         }
-        return "An error occurred. Please try again 😢.";
+        return "An error occurred. Please try again.";
       },
     });
 
