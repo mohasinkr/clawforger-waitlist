@@ -39,7 +39,7 @@ export default function Form({
       <motion.div variants={itemVariants}>
         <Input
           type="email"
-          placeholder="Work Email Address"
+          placeholder="Email Address"
           value={email}
           onChange={handleEmailChange}
         />
