@@ -7,8 +7,8 @@ import { Analytics } from "@vercel/analytics/react";
 const FigtreeFont = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "OpenClaw Waitlist | Deploy Secure AI Agents for Beginners",
-  description: "Join the ClawdForger Waitlist",
+  title: "ClawForger Waitlist | Deploy OpenClaw securely for Beginners",
+  description: "Join the ClawForger Waitlist",
 };
 
 export default function RootLayout({
