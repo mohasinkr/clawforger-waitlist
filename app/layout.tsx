@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 const FigtreeFont = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ClawdForger Waitlist",
+  title: "OpenClaw Waitlist | Deploy Secure AI Agents for Beginners",
   description: "Join the ClawdForger Waitlist",
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({
       <meta property="og:site_name" content="Join the ClawdForger Waitlist" />
       <meta
         property="og:url"
-        content="https://cloudforge-waitlist.vercel.app/"
+        content="https://clawforger.vercel.app/"
       />
       <meta name="twitter:image" content="/twitter-image.png" />
       <meta name="twitter:image:type" content="image/png" />
