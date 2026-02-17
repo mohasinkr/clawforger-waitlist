@@ -30,14 +30,17 @@ export default function CTA() {
       <motion.div variants={itemVariants}>
         <TextBlur
           className="text-center text-3xl font-medium tracking-tighter sm:text-5xl"
-          text="Secure Infrastructure for Autonomous AI Agents"
+          // text="Deploy secure OpenClaw instances in just a few clicks!"
+          text="Deploy secure OpenClaw instances in seconds!"
         />
       </motion.div>
 
       <motion.div variants={itemVariants}>
         <TextBlur
           className="mx-auto max-w-[32rem] pt-1.5 text-center text-base text-zinc-300 sm:text-lg"
-          text="Managed, isolated infrastructure for OpenClaw agents — without DevOps overhead. Enterprise-grade security meets autonomous agent deployment."
+          // text="Managed & isolated infrastructure for OpenClaw agents — without DevOps overhead."
+          text="Dedicated VPS environments, preconfigured and managed — so you can run OpenClaw without fighting infrastructure."
+          // text="Dedicated VPS | BYOK | Per-agent inboxes | Nightly encrypted memory snapshots — built for people who need control, not surprise incidents."
           duration={0.8}
         />
       </motion.div>

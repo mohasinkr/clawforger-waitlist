@@ -1,38 +1,72 @@
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "@/lib/animation-variants";
 import TextBlur from "./ui/text-blur";
-import { FaShieldHalved, FaServer, FaLock, FaCloud, FaRobot, FaCodeBranch } from "react-icons/fa6";
+import { FaShieldHalved, FaServer, FaLock, FaCloud, FaRobot, FaCodeBranch, FaDatabase, FaTerminal } from "react-icons/fa6";
+
+// const features = [
+//   { 
+//     icon: FaShieldHalved, 
+//     title: "Dedicated VPS per user", 
+//     description: "Each agent runs in its own secure sandbox" 
+//   },
+//   { 
+//     icon: FaServer, 
+//     title: "Managed Infrastructure", 
+//     description: "Zero DevOps overhead for your team" 
+//   },
+//   { 
+//     icon: FaLock, 
+//     title: "Pre-configured with best Security practices", 
+//     description: "SOC 2 compliant with end-to-end encryption" 
+//   },
+//   { 
+//     icon: FaCloud, 
+//     title: "Cloud Native", 
+//     description: "Deployed on scalable, reliable cloud infrastructure" 
+//   },
+//   { 
+//     icon: FaRobot, 
+//     title: "Quick Backup & Restore", 
+//     description: "Purpose-built for autonomous AI agents" 
+//   },
+//   { 
+//     icon: FaCodeBranch, 
+//     title: "Mission Control Dashboard", 
+//     description: "Integrate seamlessly with your existing workflow" 
+//   },
+// ];
+
 
 const features = [
   { 
-    icon: FaShieldHalved, 
-    title: "Isolated Containers", 
-    description: "Each agent runs in its own secure sandbox" 
+    icon: FaServer,
+    title: "Dedicated KVM per user",
+    description: "Each OpenClaw instance runs on its own isolated virtual machine."
   },
   { 
-    icon: FaServer, 
-    title: "Managed Infrastructure", 
-    description: "Zero DevOps overhead for your team" 
+    icon: FaCodeBranch,
+    title: "OpenClaw, pre-installed",
+    description: "A ready-to-run OpenClaw environment with sensible defaults."
   },
   { 
-    icon: FaLock, 
-    title: "Enterprise Security", 
-    description: "SOC 2 compliant with end-to-end encryption" 
+    icon: FaShieldHalved,
+    title: "Safe-by-default configuration",
+    description: "Preconfigured limits, isolation, and guardrails to reduce risk."
   },
   { 
-    icon: FaCloud, 
-    title: "Cloud Native", 
-    description: "Deployed on scalable, reliable cloud infrastructure" 
+    icon: FaCloud,
+    title: "Managed runtime",
+    description: "We handle provisioning, updates, and base system maintenance."
   },
   { 
-    icon: FaRobot, 
-    title: "OpenClaw Ready", 
-    description: "Purpose-built for autonomous AI agents" 
+    icon: FaDatabase,
+    title: "Backup & restore",
+    description: "Encrypted snapshots to recover agent state when things go wrong."
   },
   { 
-    icon: FaCodeBranch, 
-    title: "API-First Design", 
-    description: "Integrate seamlessly with your existing workflow" 
+    icon: FaTerminal,
+    title: "Mission control dashboard",
+    description: "Start, stop, monitor, and reset your OpenClaw instance."
   },
 ];
 
