@@ -42,7 +42,6 @@ export default function Home() {
 
     const promise = new Promise(async (resolve, reject) => {
       try {
-        // First, attempt to send the email
         const mailResponse = await fetch("/api/mail", {
           cache: "no-store",
           method: "POST",
@@ -58,10 +57,9 @@ export default function Home() {
           } else {
             reject("Email sending failed");
           }
-          return; // Exit the promise early if mail sending fails
+          return;
         }
 
-        // If email sending is successful, proceed to insert into Notion
         const notionResponse = await fetch("/api/notion", {
           method: "POST",
           headers: {
@@ -85,7 +83,7 @@ export default function Home() {
     });
 
     toast.promise(promise, {
-      loading: "Processing your request... 🚀",
+      loading: "Processing your request...",
       success: (data) => {
         setName("");
         setEmail("");
@@ -109,10 +107,10 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center overflow-x-clip pt-12 md:pt-24">
-      <section className="flex flex-col items-center px-4 sm:px-6 lg:px-8">
-        <Header />
+    <main className="flex min-h-screen flex-col items-center overflow-x-hidden pt-20 md:pt-28">
+      <Header />
 
+      <section className="flex w-full max-w-6xl flex-col items-center px-4 sm:px-6 lg:px-8">
         <CTA />
 
         <Form
@@ -130,10 +128,10 @@ export default function Home() {
       <Footer />
 
       <Particles
-        quantityDesktop={350}
-        quantityMobile={100}
+        quantityDesktop={200}
+        quantityMobile={60}
         ease={80}
-        color={"#F7FF9B"}
+        color={"#d33b3a"}
         refresh
       />
     </main>

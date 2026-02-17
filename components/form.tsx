@@ -1,7 +1,5 @@
-import Link from "next/link";
 import { ChangeEvent } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { Input } from "@/components/ui/input";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { EnhancedButton } from "@/components/ui/enhanced-btn";
@@ -26,7 +24,7 @@ export default function Form({
 }: FormProps) {
   return (
     <motion.div
-      className="mt-6 flex w-full max-w-[24rem] flex-col gap-2"
+      className="mt-10 flex w-full max-w-md flex-col gap-3"
       variants={containerVariants}
       initial="hidden"
       animate="visible">
@@ -52,29 +50,16 @@ export default function Form({
           Icon={FaArrowRightLong}
           onClick={handleSubmit}
           iconPlacement="right"
-          className="mt-2 w-full"
+          className="mt-2 h-11 w-full border-[#d33b3a] bg-[#d33b3a] text-white hover:bg-[#c23332]"
           disabled={loading}>
           {loading ? "Joining..." : "Reserve a Pilot Seat!"}
         </EnhancedButton>
       </motion.div>
-      {/* <motion.div
+      <motion.p
         variants={itemVariants}
-        className="mt-4 flex w-full items-center justify-center gap-1 text-muted-foreground">
-        <p>For enterprise inquiries, contact us at </p>
-        <Link
-          href="https://x.com"
-          rel="noopener noreferrer"
-          target="_blank">
-          <FaXTwitter className="h-4 w-4 transition-all duration-200 ease-linear hover:text-yellow-200" />
-        </Link>
-        or
-        <Link
-          href="https://github.com"
-          rel="noopener noreferrer"
-          target="_blank">
-          <FaGithub className="ml-0.5 h-5 w-5 transition-all duration-200 ease-linear hover:text-yellow-200" />
-        </Link>
-      </motion.div> */}
+        className="mt-4 text-center text-xs text-zinc-500">
+        No spam, ever. We&apos;ll only reach out when it&apos;s your turn.
+      </motion.p>
     </motion.div>
   );
 }
