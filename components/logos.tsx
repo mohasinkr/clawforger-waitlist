@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "@/lib/animation-variants";
 import TextBlur from "./ui/text-blur";
-import { FaShieldHalved, FaServer, FaLock, FaCloud, FaRobot, FaCodeBranch, FaDatabase, FaTerminal } from "react-icons/fa6";
+import { FaShieldHalved, FaServer, FaLock, FaCloud, FaRobot, FaCodeBranch, FaDatabase, FaTerminal, FaKey } from "react-icons/fa6";
 
 // const features = [
 //   { 
@@ -44,8 +44,8 @@ const features = [
     description: "Each OpenClaw instance runs on its own isolated virtual machine."
   },
   { 
-    icon: FaCodeBranch,
-    title: "OpenClaw, pre-installed",
+    icon: FaKey,
+    title: "BYOK Support",
     description: "A ready-to-run OpenClaw environment with sensible defaults."
   },
   { 

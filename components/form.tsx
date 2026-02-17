@@ -54,10 +54,10 @@ export default function Form({
           iconPlacement="right"
           className="mt-2 w-full"
           disabled={loading}>
-          {loading ? "Joining..." : "Request Early Access"}
+          {loading ? "Joining..." : "Reserve a Pilot Seat!"}
         </EnhancedButton>
       </motion.div>
-      <motion.div
+      {/* <motion.div
         variants={itemVariants}
         className="mt-4 flex w-full items-center justify-center gap-1 text-muted-foreground">
         <p>For enterprise inquiries, contact us at </p>
@@ -74,7 +74,7 @@ export default function Form({
           target="_blank">
           <FaGithub className="ml-0.5 h-5 w-5 transition-all duration-200 ease-linear hover:text-yellow-200" />
         </Link>
-      </motion.div>
+      </motion.div> */}
     </motion.div>
   );
 }
