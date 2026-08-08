@@ -9,23 +9,38 @@ import { Ratelimit } from "@upstash/ratelimit";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN,
-});
+const redis =
+  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
+    ? new Redis({
+        url: process.env.UPSTASH_REDIS_REST_URL,
+        token: process.env.UPSTASH_REDIS_REST_TOKEN,
+      })
+    : null;
 
-const ratelimit = new Ratelimit({
-  redis,
-  // 2 requests per minute from the same IP address in a sliding window of 1 minute duration which means that the window slides forward every second and the rate limit is reset every minute for each IP address.
-  limiter: Ratelimit.slidingWindow(2, "1 m"),
-});
+const ratelimit = redis
+  ? new Ratelimit({
+      redis,
+      // 2 requests per minute from the same IP address in a sliding window of 1 minute duration which means that the window slides forward every second and the rate limit is reset every minute for each IP address.
+      limiter: Ratelimit.slidingWindow(2, "1 m"),
+    })
+  : null;
+
+async function isRateLimited(ip: string) {
+  if (!ratelimit) return false;
+  try {
+    const result = await ratelimit.limit(ip);
+    return !result.success;
+  } catch {
+    return false;
+  }
+}
 
 export async function POST(request: NextRequest, response: NextResponse) {
   const ip = request.ip ?? "127.0.0.1";
 
-  const result = await ratelimit.limit(ip);
+  const rateLimited = await isRateLimited(ip);
 
-  if (!result.success) {
+  if (rateLimited) {
     return Response.json(
       {
         error: "Too many requests!!",
